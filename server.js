@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-const cors = require('cors');
+
 
 // UPDATED: Allow both localhost AND Render URLs
 const allowedOrigins = [
