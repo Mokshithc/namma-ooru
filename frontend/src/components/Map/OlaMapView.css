@@ -1,0 +1,19 @@
+/* OlaMapView - Clean White Theme */
+
+.ola-map-container {
+  width: 70%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.ola-map-container canvas {
+  outline: none;
+}
+
+/* Ola Maps attribution styling */
+.olaMapsAttribution {
+  font-size: 10px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}

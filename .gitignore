@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.production
+frontend/.env
+frontend/.env.local
+
+# Build outputs
+frontend/build/
+frontend/dist/
+
+# User uploaded files
+uploads/
+reports/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+uploads/
+uploads/reports/
+
+# scrapssss
+backend/
+frontend1/
+src1/
+exifold*.js
+testDB.js
+fixDatabase.js
+.qodo/
+
+
+# Build cache
+.cache/
+.parcel-cache/
+
+.env
+

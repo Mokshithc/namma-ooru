@@ -1,0 +1,348 @@
+/* Clean White Theme - CreateReport */
+
+.create-report-container {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+/* Header with Dashboard + Logout */
+.create-report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.btn-dashboard,
+.create-report-header .btn-logout {
+  background: white;
+  
+  border: 1px solid #ddd;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-dashboard:hover{
+  background: #ffffff;
+  border-color: #333;
+}
+
+
+.create-report-header  {
+  background: #ffffff;
+  border-color: #333;
+}
+
+
+.create-report-header .btn-logout {
+  color: #f3f3f3;
+  border-color: #fffafa;
+}
+
+.create-report-header  {
+  background: #ffffff;
+  color: white;
+  border-color: #000000;
+}
+.btn-logout:hover {
+  background: #ffffff;
+  color: white;
+  border-color: #000000;
+}
+
+/* Main Form */
+.create-report-form {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-header h1 {
+  margin: 0 0 0.5rem;
+  color: #333;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.form-header .subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Form Card */
+.report-form {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.section-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Capture Button */
+.btn-capture-image {
+  width: 100%;
+  padding: 3rem 2rem;
+  background: white;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: #333;
+}
+
+.btn-capture-image:hover {
+  border-color: #333;
+  background: #fafafa;
+}
+
+.camera-icon {
+  font-size: 3rem;
+}
+
+.capture-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.capture-hint {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Category Grid */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.category-card {
+  padding: 1.5rem 0.75rem;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-card:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+.category-card.active {
+  background: #333;
+  border-color: #333;
+  color: white;
+}
+
+.category-icon {
+  font-size: 2rem;
+}
+
+.category-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Form Inputs */
+.form-textarea,
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-textarea:focus,
+.form-input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.form-textarea.error,
+.form-input.error {
+  border-color: #d32f2f;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+.field-hint {
+  display: block;
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Error Messages */
+.error-message {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.error-message::before {
+  content: '⚠️';
+}
+
+.submit-error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ffcdd2;
+}
+
+.error-icon {
+  font-size: 1.25rem;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #555;
+}
+
+.btn-submit:disabled {
+  background: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.submit-info {
+  text-align: center;
+  margin-top: 1rem;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .create-report-form {
+    margin: 1rem auto;
+  }
+
+  .report-form {
+    padding: 1.5rem;
+  }
+
+.dashboard-header {
+    padding: 1rem;
+  }
+
+  .form-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn-capture-image {
+    padding: 2rem 1rem;
+  }
+
+  .camera-icon {
+    font-size: 2.5rem;
+  }
+
+  .btn-dashboard,
+  .create-report-header .btn-logout {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Remove old back button */
+.back-button {
+  display: none;
+}
