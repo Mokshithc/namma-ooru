@@ -6,10 +6,38 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
+const cors = require('cors');
+
+// UPDATED: Allow both localhost AND Render URLs
+const allowedOrigins = [
+  // Local development
+  'http://localhost:3001',
+  'http://localhost:3000',
+  'http://192.168.1.16:3001',
+  'http://192.168.1.16:3000',
+  
+  // Production - UPDATE THESE after deployment
+  'https://namma-ooru.onrender.com',           // Your frontend URL
+  'https://namma-ooru-api.onrender.com'        // Your backend URL
+];
+
 app.use(cors({
-  origin: '*',
-  credentials: true
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or Postman)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
