@@ -17,8 +17,8 @@ const allowedOrigins = [
   'http://192.168.1.16:3000',
   
   // Production - UPDATE THESE after deployment
-  'https://namma-ooru.onrender.com',           // Your frontend URL
-  'https://namma-ooru-api.onrender.com'        // Your backend URL
+
+ 'https://namma-ooru-c21n.onrender.com'    // Your backend URL
 ];
 
 app.use(cors({
