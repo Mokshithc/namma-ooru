@@ -14,8 +14,7 @@ frontend/build/
 frontend/dist/
 
 # User uploaded files
-uploads/
-reports/
+
 
 # Logs
 *.log
