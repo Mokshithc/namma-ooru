@@ -1,7 +1,7 @@
 Namma Ooru
 A civic engagement platform enabling citizens to report and track local community issues.
 
-🌐 Live Demo: https://namma-ooru.onrender.com
+🌐 Live Demo: https://namma-ooru-c21n.onrender.com
 
 📦 Repository: https://github.com/Mokshithc/namma-ooru
 
