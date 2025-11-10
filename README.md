@@ -32,13 +32,16 @@ Maps: Ola Maps API
 
 Hosting: Render (Frontend + Backend)
 
-Installation
+Installation:
+
+backend
 npm install
-# Configure .env with DATABASE_URL, JWT_SECRET
+Configure .env with DATABASE_URL, JWT_SECRET
 npm start
+
 Frontend
 npm install
-# Configure .env with REACT_APP_API_URL
+Configure .env with REACT_APP_API_URL
 npm start
 
 Usage
