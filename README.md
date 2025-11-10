@@ -33,20 +33,18 @@ Maps: Ola Maps API
 Hosting: Render (Frontend + Backend)
 
 Installation
-Backend
-bash
 npm install
 # Configure .env with DATABASE_URL, JWT_SECRET
 npm start
 Frontend
-bash
 npm install
 # Configure .env with REACT_APP_API_URL
 npm start
+
 Usage
 Citizens: Register → Submit reports with photos → Track status
 
-Admins: Login → View all reports → Update status → Manage issues
+Admins: Login → View all reports → Update status 
 
 Contact
 For issues or questions, visit the GitHub repository.
