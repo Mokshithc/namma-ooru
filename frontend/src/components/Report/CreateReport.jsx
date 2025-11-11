@@ -238,7 +238,7 @@ const handleRemoveImage = () => {
             >
               <span className="camera-icon"></span>
               <span className="capture-text">Capture Image with GPS</span>
-              <span className="capture-hint">Image will be embedded with location data</span>
+              <span className="capture-hint">Image will be captured along with gps location data</span>
             </button>
           )}
           {errors.image && (
