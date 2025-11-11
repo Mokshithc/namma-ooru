@@ -1,7 +1,7 @@
 Namma Ooru
 A civic engagement platform enabling citizens to report and track local community issues.
 
-🌐 Live Demo: https://namma-ooru.onrender.com
+🌐 Live Demo: https://namma-ooru-c21n.onrender.com
 
 📦 Repository: https://github.com/Mokshithc/namma-ooru
 
@@ -32,21 +32,22 @@ Maps: Ola Maps API
 
 Hosting: Render (Frontend + Backend)
 
-Installation
-Backend
-bash
+Installation:
+
+backend
 npm install
-# Configure .env with DATABASE_URL, JWT_SECRET
+Configure .env with DATABASE_URL, JWT_SECRET
 npm start
+
 Frontend
-bash
 npm install
-# Configure .env with REACT_APP_API_URL
+Configure .env with REACT_APP_API_URL
 npm start
+
 Usage
 Citizens: Register → Submit reports with photos → Track status
 
-Admins: Login → View all reports → Update status → Manage issues
+Admins: Login → View all reports → Update status 
 
 Contact
 For issues or questions, visit the GitHub repository.
