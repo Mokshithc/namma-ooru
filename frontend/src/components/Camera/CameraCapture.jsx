@@ -211,7 +211,7 @@ const captureData = {
       <div className="camera-info">
         <p>
           <small>
-            Image will be captured with embedded GPS coordinates and timestamp.
+            Image will be captured along with GPS coordinates.
             <br />
             Make sure location permissions are enabled.
           </small>

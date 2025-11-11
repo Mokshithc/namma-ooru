@@ -9,8 +9,7 @@ import LocationPicker from '../LocationPicker/LocationPicker';
 
 const CATEGORIES = [
   { value: 'garbage', label: '🗑️ Garbage/Waste', icon: '🗑️' },
-  { value: 'road_damage', label: '🛣️ Road Damage', icon: '🛣️' },
-  { value: 'other', label: ' Other Issue', icon: '' },
+  { value: 'road_damage', label: '🛣️ Road Damage', icon: '🛣️' }
 ];
 
 const CreateReport = ({ onSuccess }) => {
