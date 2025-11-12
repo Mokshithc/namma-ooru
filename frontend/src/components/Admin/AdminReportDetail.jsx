@@ -70,20 +70,20 @@ const handleLogout = () => {
     }
   };
 
-  // const handleDelete = async () => {
-  //   if (!window.confirm('Are you sure you want to delete this report? This action cannot be undone.')) {
-  //     return;
-  //   }
+  const handleDelete = async () => {
+    if (!window.confirm('Are you sure you want to delete this report? This action cannot be undone.')) {
+      return;
+    }
 
-  //   try {
-  //     await api.delete(`/admin/reports/${id}`);
-  //     alert('Report deleted successfully');
-  //     navigate('/admin');
-  //   } catch (err) {
-  //     console.error('Error deleting report:', err);
-  //     alert('Failed to delete report');
-  //   }
-  // };
+    try {
+      await api.delete(`/admin/reports/${id}`);
+      alert('Report deleted successfully');
+      navigate('/admin');
+    } catch (err) {
+      console.error('Error deleting report:', err);
+      alert('Failed to delete report');
+    }
+  };
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -246,7 +246,6 @@ const handleLogout = () => {
                 <option value="in_progress">In Progress</option>
                 <option value="resolved">Resolved</option>
                 <option value="reopened">Reopened</option>
-                <option value="closed">Closed</option>
               </select>
 
               <button
@@ -271,11 +270,11 @@ const handleLogout = () => {
 
           {/* Danger Zone */}
         
-          {/* <div className="danger-card">
-            <h3>⚠️ Danger Zone</h3>
+          { report.status === 'closed' && <div className="danger-card"> 
+            <h3> Danger Zone</h3>
             <p>Deleting this report cannot be undone.</p>
             <button onClick={handleDelete} className="danger-btn">Delete Report</button>
-          </div> */}
+          </div>}
         </div>
       </div>
     </div>
