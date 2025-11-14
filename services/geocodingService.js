@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const OLA_API_KEY = process.env.OLA_MAPS_API_KEY;
-const OLA_BASE_URL = 'https://api.olamaps.io/places/v1';
+const OLA_BASE_URL = process.env.OLA_MAPS_BASE_URL;
 
 /**
  * Reverse geocode using Ola Maps API

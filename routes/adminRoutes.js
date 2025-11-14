@@ -30,38 +30,6 @@ router.get('/stats', async (req, res) => {
   }
 });
 
-// GET /api/admin/reports
-// router.get('/reports', async (req, res) => {
-//   try {
-//     const { status, category } = req.query;
-//     let query = `
-//       SELECT r.*, u.name as user_name, u.email as user_email
-//       FROM reports r
-//       JOIN users u ON r.user_id = u.id
-//       WHERE 1=1
-//     `;
-//     const params = [];
-    
-//     if (status && status !== 'all') {
-//       params.push(status);
-//       query += ` AND r.status = $${params.length}`;
-//     }
-    
-//     if (category && category !== 'all') {
-//       params.push(category);
-//       query += ` AND r.category = $${params.length}`;
-//     }
-    
-//     query += ' ORDER BY r.created_at DESC';
-//     const result = await pool.query(query, params);
-//     res.json({ reports: result.rows, total: result.rowCount });
-//   } catch (error) {
-//     console.error('Error fetching all reports:', error);
-//     res.status(500).json({ error: 'Failed to fetch reports' });
-//   }
-// });
-
-// GET /api/admin/reports - Get all reports with filters
 router.get('/reports', async (req, res) => {
   try {
     const { status, category } = req.query;
@@ -89,9 +57,7 @@ router.get('/reports', async (req, res) => {
       params.push(category);
       query += ` AND r.category = $${params.length}`;
     }
-    
-    // ✅ NEW: Priority-based ordering
-  // ✅ UPDATED: Handle NULL priority (closed reports go to bottom)
+
 query += ` ORDER BY 
   CASE 
     WHEN r.priority IS NULL THEN 99                          -- NULL priority (closed) at bottom
@@ -141,40 +107,8 @@ router.get('/reports/:id', async (req, res) => {
   }
 });
 
-// PATCH /api/admin/reports/:id
-// router.patch('/reports/:id', async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const { status } = req.body;
-    
-//     const validStatuses = ['open', 'in_progress', 'resolved', 'closed'];
-//     if (!validStatuses.includes(status)) {
-//       return res.status(400).json({ error: 'Invalid status' });
-//     }
-    
-//     const query = `
-//       UPDATE reports 
-//       SET status = $1
-//       WHERE id = $2 
-//       RETURNING *
-//     `;
-//     const result = await pool.query(query, [status, id]);
-    
-//     if (result.rows.length === 0) {
-//       return res.status(404).json({ error: 'Report not found' });
-//     }
-//     res.json({ message: 'Status updated successfully', report: result.rows[0] });
-//   } catch (error) {
-//     console.error('Error updating report status:', error);
-//     res.status(500).json({ error: 'Failed to update status' });
-//   }
-// });
 
-// PATCH /api/admin/reports/:id - Update report status
-// PATCH /api/admin/reports/:id - Update report status
-// PATCH /api/admin/reports/:id - Update report status
-// PATCH /api/admin/reports/:id - Update report status
-// PATCH /api/admin/reports/:id - Update report status
+
 router.patch('/reports/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -182,7 +116,7 @@ router.patch('/reports/:id', async (req, res) => {
 
     console.log('Updating report:', id, 'to status:', status);
 
-    // ✅ NEW: Check current status before allowing update
+   
     const checkQuery = 'SELECT status FROM reports WHERE id = $1';
     const checkResult = await pool.query(checkQuery, [id]);
     
@@ -192,7 +126,7 @@ router.patch('/reports/:id', async (req, res) => {
     
     const currentStatus = checkResult.rows[0].status;
     
-    // ✅ Block admin from changing status when awaiting user confirmation
+
     if (currentStatus === 'awaiting_user_confirmation') {
       return res.status(403).json({ 
         error: 'Cannot update status while awaiting user confirmation',
@@ -223,7 +157,6 @@ router.patch('/reports/:id', async (req, res) => {
     let query, params;
 
     if (finalStatus === 'closed') {
-      // When closing, set priority to NULL
       query = `
         UPDATE reports
         SET 
